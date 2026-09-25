@@ -2251,6 +2251,10 @@ a.partner-card-link:focus-visible .partner-card-name {
   align-items: center;
 }
 
+.initiative-inner > * {
+  min-width: 0;
+}
+
 .initiative-inner-reverse {
   direction: rtl;
 }
@@ -2296,6 +2300,65 @@ a.partner-card-link:focus-visible .partner-card-name {
 .initiative-visual-placeholder img {
   width: min(280px, 50vw);
   border-radius: 50%;
+}
+
+.chapter-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  width: min(520px, 46vw);
+}
+
+.chapter-photos a {
+  display: block;
+  min-width: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.chapter-photos a:first-child {
+  grid-column: 1 / -1;
+}
+
+.chapter-photos img {
+  width: 100%;
+  max-width: 100%;
+  height: 168px;
+  object-fit: cover;
+  object-position: center 30%;
+  transition: transform 0.25s;
+}
+
+.chapter-photos a:first-child img {
+  height: 240px;
+  object-position: center 40%;
+}
+
+.chapter-photos a:hover img {
+  transform: scale(1.03);
+}
+
+.chapter-start {
+  background: linear-gradient(165deg, var(--navy) 0%, var(--navy-light) 100%);
+  text-align: center;
+}
+
+.chapter-start-inner {
+  max-width: 40rem;
+}
+
+.chapter-start .eyebrow {
+  color: var(--teal-light);
+}
+
+.chapter-start h2,
+.chapter-start p {
+  color: var(--white);
+}
+
+.chapter-start p {
+  margin-bottom: 1.5rem;
 }
 
 .about-extra-visual img {
@@ -2519,6 +2582,11 @@ a.partner-card-link:focus-visible .partner-card-name {
 
   .initiative-actions {
     justify-content: center;
+  }
+
+  .chapter-photos {
+    width: min(520px, 100%);
+    margin-inline: auto;
   }
 
 }
